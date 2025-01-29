@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and page background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5f2f0; /* Light greenish background */
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container to center content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styles */
+        h2 {
+            color: #2c3e50; /* Darker color for the heading */
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #16a085; /* Teal color for links */
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        li a:hover {
+            color: #1abc9c; /* Lighter teal for hover effect */
+        }
+
+        /* Button-like links */
+        li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #16a085; /* Teal background for buttons */
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        li a:hover {
+            background-color: #1abc9c; /* Lighter teal on hover */
+        }
+
+        /* Optional styling for smaller devices */
+        @media screen and (max-width: 600px) {
+            h2 {
+                font-size: 22px;
+            }
+
+            li a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <ul>
+            <li><a href="{% url 'profile' %}">View Profile</a></li>
+            <li><a href="{% url 'change_password' %}">Change Password</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </div>
+</body>
+</html>

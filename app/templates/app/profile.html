@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and page background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5f2f0; /* Light greenish background */
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container to center content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styles */
+        h2 {
+            color: #2c3e50; /* Darker color for the heading */
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph styles */
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        p strong {
+            color: #16a085; /* Teal color for labels */
+        }
+
+        /* Link styles */
+        a {
+            text-decoration: none;
+            color: #16a085; /* Teal color for links */
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1abc9c; /* Lighter teal for hover effect */
+        }
+
+        /* Button-like links */
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #16a085; /* Teal background for buttons */
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #1abc9c; /* Lighter teal on hover */
+        }
+
+        /* Optional styling for smaller devices */
+        @media screen and (max-width: 600px) {
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Profile</h2>
+
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+        <p><strong>Last Login:</strong> {{ user.last_login }}</p>
+
+        <p><a href="{% url 'dashboard' %}">Back to Dashboard</a></p>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+    </div>
+</body>
+</html>
